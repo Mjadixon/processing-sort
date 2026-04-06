@@ -4,7 +4,7 @@ float[] numbers = new float[100];
 
 void setup() {
   size(600, 400);
-  frameRate(4);
+  frameRate(60);
   
   for (int i = 0; i < numbers.length; i++) {
     numbers[i] = (float)Math.random();
@@ -15,7 +15,14 @@ void setup() {
 
 void draw() {
   drawBars();
-  
+
+  for(int i = 0; i<numbers.length-1;i++){
+    if(numbers[i] > numbers[i+1]){
+      float temp = numbers[i];
+      numbers[i] = numbers[i+1];
+      numbers[i+1] = temp;
+    }
+  }
   // sorting algorithm here (just one step)
 }
 
