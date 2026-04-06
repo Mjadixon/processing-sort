@@ -20,7 +20,7 @@ if(count<numbers.length){
  int j = count-1;
     while ( j>=0&&numbers[j]>temp) {
       numbers[j + 1] = numbers[j];
-      j = j - 1;
+      j--;
     }
     numbers[j+1]=temp;
     count++;
